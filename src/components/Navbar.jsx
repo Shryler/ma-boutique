@@ -5,7 +5,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import TypeWriter from './animations/TypeWriter';
 import Form from 'react-bootstrap/Form';
 import { NavLink } from 'react-router-dom';
-
+import { FaRegUser } from 'react-icons/fa';
+import { BsBasket } from 'react-icons/bs';
+import ToolTips from './animations/ToolTips';
 
 function NavbarComponent() {
   return (
@@ -37,6 +39,10 @@ function NavbarComponent() {
           <Form className="d-flex">
             <Form.Control type="search" placeholder="Recherche" aria-label="Search" />
           </Form>
+          <div className='d-flex ms-2 navbar-nav d-flex text-light'>
+            <ToolTips button={<FaRegUser size="25" />} text={"Se connecter / S'enregistrer"}></ToolTips>
+            <ToolTips button={<BsBasket size="25" />} text={"Panier"}></ToolTips>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

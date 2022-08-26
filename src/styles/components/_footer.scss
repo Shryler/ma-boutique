@@ -1,17 +1,24 @@
 
 .footer {
     text-align: center;
-    padding: 5rem;
-    height: 400px;
+    padding: 2rem 0;
     color: $color-white;
-    background-color: $background-1;
+    background-color: $color-black;
+}
+
+.footer a, a:active {
+    color:rgba(255, 255, 255, 0.55);
+}
+.footer a:hover {
+    color:rgba(255, 255, 255);
 }
 
 .newsletters {
     line-height: 100px;
     text-align: center;
-    color: $color-white;
-    background-color: $background-2;
+    color: $color-black;
+    font-family: $font-typeWriter;
+    background-color: $color-primary;
 }
 
 .newsletters p {
@@ -28,12 +35,11 @@
     font-size: 20px;
 }
 
-.footer-contain {
-    height: 250px;
-}
-
 .footer-contain h3 {
     font-size: 1rem;
+    line-height: 2rem;
+    margin: 0;
+    padding:2rem 0;
     position: relative;
     font-family: $font-title;
     text-transform:uppercase;
@@ -41,12 +47,45 @@
 .footer-contain h3:before {
     content: '\203A';
     position: absolute;
-    color: $color-grey;
+    color: $color-primary;
     left:10%;
 }
 .footer-contain h3:after {
     content: '\2039';
     position: absolute;
-    color: $color-grey;
+    color: $color-primary;
     right:10%;
+}
+
+.footer-navigation-container {
+    text-align: left;
+    padding: 0 2rem;
+}
+
+.footer-navigation-sub li:before {
+    content: "\290D";
+    color: $color-primary;
+    margin: 0 10px;
+}
+
+.btn-custom-color {
+    border: 1px solid $color-primary;
+    color: $color-primary;
+}
+.btn-custom-color:hover {
+    border: 1px solid $color-primary;
+    background-color: $color-primary;
+    color: $color-black;
+}
+
+.copyright {
+    font-size: 0.8em;
+}
+
+// MEDIA QUERIES
+
+@media screen and (max-width: 992px){
+    .footer-navigation-container {
+        text-align: center;
+    }
 }

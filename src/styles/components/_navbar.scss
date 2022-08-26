@@ -17,6 +17,27 @@ width: 150px;
     transition: 0.4s;
 }
 
+.navbar-btn {
+    color: $color-white;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: transparent;
+    border: none;
+    transition: 0.4s;
+}
+.navbar-btn:hover {
+    color: $color-black;
+    background-color: $color-white;
+}
+
+.form-control {
+    transition:0.4s;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 .2rem #00d6bd8f;
+}
+
 // TypeWriter
 
 .typewriter {

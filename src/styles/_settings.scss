@@ -5,15 +5,16 @@
     font-family: "font-typeWriter";
     src: url(../assets/fonts/ATypewriterForMe.ttf);
   }
-  
+
 $font-title: "font-title", sans-serif;
 $font-typeWriter: "font-typeWriter", sans-serif;
 
+$color-primary: #00d6bc;
 $color-white: rgba(255, 255, 255, 0.7);
-$color-grey: rgba(162, 162, 162, 0.7);
-$background-1: rgb(33,37,41);
-$background-2: rgb(110, 148, 187);
+$color-grey: #bdbebf;
+$color-black: rgb(33,37,41);
 $color-3: #282c34;
+
 
 * {
   padding: 0;
@@ -27,13 +28,30 @@ a {
 }
 body {
   margin: 0 auto;
+  transition: 0.6s ease-in-out;
+  background-color: $color-grey;
 }
 
 main {
     margin-top: 60px;
-    height: 60vh;
+    min-height: 60vh;
+}
+
+section {
+  margin-bottom: 2rem;
+  min-height: 80vh;
+  background-color: white;
+}
+
+footer {
+  margin-top: 2rem;
 }
 
 li {
   list-style-type: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
 }
