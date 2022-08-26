@@ -1,0 +1,15 @@
+#carouselExampleFade {
+    max-width: 1366px;
+    margin: auto;
+    margin-bottom: 1rem;
+    margin-top: 70px;
+}
+.carousel-indicators {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 576px){
+    .carousel-indicators {
+        display: none;
+    }
+}

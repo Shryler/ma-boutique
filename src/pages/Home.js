@@ -8,9 +8,11 @@ const Home = () => {
     return (
         <>
             <NavbarComponent />
+            <Container fluid>
+                    <CarouselPrincipal />
+            </Container>
             <Container>
                 <main>
-                    <CarouselPrincipal />
                     <section>
                         <h1>Home</h1>
                     </section>
