@@ -1,0 +1,52 @@
+
+.footer {
+    text-align: center;
+    padding: 5rem;
+    height: 400px;
+    color: $color-white;
+    background-color: $background-1;
+}
+
+.newsletters {
+    line-height: 100px;
+    text-align: center;
+    color: $color-white;
+    background-color: $background-2;
+}
+
+.newsletters p {
+    margin: 0;
+}
+
+.title-typewriter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+.title-typewriter .typewriter {
+    font-size: 20px;
+}
+
+.footer-contain {
+    height: 250px;
+}
+
+.footer-contain h3 {
+    font-size: 1rem;
+    position: relative;
+    font-family: $font-title;
+    text-transform:uppercase;
+}
+.footer-contain h3:before {
+    content: '\203A';
+    position: absolute;
+    color: $color-grey;
+    left:10%;
+}
+.footer-contain h3:after {
+    content: '\2039';
+    position: absolute;
+    color: $color-grey;
+    right:10%;
+}
