@@ -10,7 +10,6 @@
 
 .title-brand {
     color: $color-white;
-    font-family: $font-title;
     font-weight: 600;
 }
 
@@ -48,6 +47,6 @@
 
 .typewriter {
     color: $color-white;
-    font-family: $font-typeWriter;
+    font-family: $font-typeWriter !important;
     font-size: small;
 }

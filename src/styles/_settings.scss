@@ -1,17 +1,13 @@
 @font-face {
-  font-family: "font-title";
-  src: url(../assets/fonts/FredokaOne-Regular.ttf);
-
-  font-family: "font-typeWriter";
-  src: url(../assets/fonts/ATypewriterForMe.ttf);
-
   font-family: "font-Michroma";
   src: url(../assets/fonts/BebasNeue-Regular.ttf);
+
+  font-family: 'Major Mono Display', monospace;
+  @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 }
 
-$font-title: "font-title", sans-serif;
-$font-title2: "font-Michroma", sans-serif;
-$font-typeWriter: "font-typeWriter", sans-serif;
+$font-title: "font-Michroma", sans-serif;
+$font-typeWriter: "Major Mono Display", monospace;
 
 $color-primary: #00d6bc;
 $color-white: rgba(255, 255, 255, 0.7);
