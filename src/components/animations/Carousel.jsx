@@ -21,19 +21,15 @@ const CarouselPrincipal = () => {
                 <div className="carousel-item active" color="#bdbebf">
                     <img src="/img/carousel/slider1.png" className="d-block w-100" alt="..." />
                 </div>
-                <div className="carousel-item" color="#375572">
+                <div className="carousel-item" color="black">
                     <img src="/img/carousel/slider2.png" className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div>
                 </div>
-                <div className="carousel-item" color="#861a93">
+                <div className="carousel-item" color="#f6ae28">
                     <img src="/img/carousel/slider3.png" className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
+                    {/* <div className="carousel-caption d-none d-md-block">
                         <h5>Third slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

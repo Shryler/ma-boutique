@@ -4,9 +4,14 @@
     
     font-family: "font-typeWriter";
     src: url(../assets/fonts/ATypewriterForMe.ttf);
+    
+    font-family: "font-Michroma";
+    src: url(../assets/fonts/BebasNeue-Regular.ttf);
+    
   }
 
 $font-title: "font-title", sans-serif;
+$font-title2: "font-Michroma", sans-serif;
 $font-typeWriter: "font-typeWriter", sans-serif;
 
 $color-primary: #00d6bc;
@@ -28,12 +33,14 @@ a {
 }
 body {
   margin: 0 auto;
+  margin-top: 60px;
   transition: 0.6s ease-in-out;
   background-color: $color-grey;
 }
 
 main {
     min-height: 60vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 section {
