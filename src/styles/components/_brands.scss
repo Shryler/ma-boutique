@@ -1,0 +1,11 @@
+.brand-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 10%;
+    row-gap: 20px;
+}
+
+.brand-container img {
+    max-width: 150px;
+}

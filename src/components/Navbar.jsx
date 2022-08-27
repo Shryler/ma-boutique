@@ -21,7 +21,7 @@ function NavbarComponent() {
         </NavLink>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav className="m-auto my-2 my-lg-0" navbarScroll>
+          <Nav className="m-auto my-2 my-lg-0 text-wrap" navbarScroll>
             <NavDropdown title="Périphériques" id="navbarScrollingDropdown">
               <NavLink to="/ecran-PC" className="dropdown-item">Ecran PC</NavLink>
               <NavLink to="/clavier-souris-tapis" className="dropdown-item">Clavier/Souris/Tapis</NavLink>

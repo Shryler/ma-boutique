@@ -11,7 +11,7 @@ const Footer = () => {
         <footer>
             <div className="newsletters">
                 <Container>
-                    <p>Inscription à la newsletters</p>
+                    <p>Inscription à la newsletter</p>
                 </Container>
             </div>
             <div className="footer">
@@ -65,7 +65,8 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="row mt-4 copyright">
-                            <p>Copyright © 2022 - Conception & Design par <a href="https://github.com/Shryler" target="_blank" rel="noreferrer" alt="Concepteur/Designer">Shryler</a></p>
+                        <p>Copyright © 2022 - Conception & Design par <a href="https://github.com/Shryler" target="_blank" rel="noreferrer" alt="Concepteur/Designer">Shryler</a> - Crédits Images <a href="https://www.ldlc.com/" target="_blank" rel="noopener noreferrer">LDLC</a></p>
+                        <em className='text-uppercase'>Dossier fil rouge (dwwm) - titre professionnel développeur web et web mobile</em>
                     </div>
                 </Container>
             </div>
