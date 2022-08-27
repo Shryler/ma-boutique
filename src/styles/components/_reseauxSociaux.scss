@@ -1,0 +1,225 @@
+.social-container {
+    width: fit-content;
+    position: fixed;
+    top: 14vh;
+    z-index: 999;
+}
+
+/* Facebook */
+
+.socialbrand-facebook i::before {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    width: 40px;
+    color: white;
+    border-radius: 0 50% 50% 0;
+    background-color: $color-black;
+    box-shadow: rgb(0 0 0 / 50%) 0px 3px 8px;
+    align-items: center;
+    margin-bottom: 5px;
+    padding-left: 7px;
+    justify-content: flex-start;
+}
+
+.socialbrand-facebook::after {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    content: "Facebook";
+    text-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    padding-left: 50px;
+    color: white;
+    padding-right: 20px;
+    margin-top: -45px;
+    height: 40px;
+    border-radius: 0 20px 20px 0;
+    background-color: #3b5998;
+    transform: translateX(-150px);
+    z-index: -1;
+}
+
+.socialbrand-facebook:hover::after {
+    animation: 0.3s cubic-bezier(.58, 0, .42, 1) btn-social forwards;
+}
+
+@keyframes btn-social {
+    0% {
+        transform: translateX(-150px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+/* Instagram */
+
+.socialbrand-instagram i::before {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    width: 40px;
+    color: white;
+    border-radius: 0 50% 50% 0;
+    box-shadow: rgb(0 0 0 / 50%) 0px 3px 8px;
+    background-color: $color-black;
+    align-items: center;
+    margin-bottom: 5px;
+    padding-left: 7px;
+    justify-content: flex-start;
+}
+
+.socialbrand-instagram::after {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    content: "Instagram";
+    text-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    padding-left: 50px;
+    color: white;
+    padding-right: 20px;
+    margin-top: -45px;
+    height: 40px;
+    border-radius: 0 20px 20px 0;
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    transform: translateX(-150px);
+    z-index: -1;
+}
+
+.socialbrand-instagram:hover::after {
+    animation: 0.3s cubic-bezier(.58, 0, .42, 1) btn-social forwards;
+}
+
+/* Youtube */
+
+.socialbrand-youtube i::before {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    width: 40px;
+    color: white;
+    border-radius: 0 50% 50% 0;
+    box-shadow: rgb(0 0 0 / 50%) 0px 3px 8px;
+    background-color: $color-black;
+    align-items: center;
+    margin-bottom: 5px;
+    padding-left: 4px;
+    justify-content: flex-start;
+}
+
+.socialbrand-youtube::after {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    content: "Youtube";
+    text-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    padding-left: 50px;
+    color: white;
+    padding-right: 20px;
+    margin-top: -45px;
+    height: 40px;
+    border-radius: 0 20px 20px 0;
+    background: #FF0000;
+    transform: translateX(-150px);
+    z-index: -1;
+}
+
+.socialbrand-youtube:hover::after {
+    animation: 0.3s cubic-bezier(.58, 0, .42, 1) btn-social forwards;
+}
+
+/* twitter */
+
+.socialbrand-twitter i::before {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    width: 40px;
+    color: white;
+    border-radius: 0 50% 50% 0;
+    box-shadow: rgb(0 0 0 / 50%) 0px 3px 8px;
+    background-color: $color-black;
+    align-items: center;
+    margin-bottom: 5px;
+    padding-left: 6px;
+    justify-content: flex-start;
+}
+
+.socialbrand-twitter::after {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    content: "Twitter";
+    text-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    padding-left: 50px;
+    color: rgb(255, 255, 255);
+    padding-right: 20px;
+    margin-top: -45px;
+    height: 40px;
+    border-radius: 0 20px 20px 0;
+    background: #1DA1F2;
+    transform: translateX(-150px);
+    z-index: -1;
+}
+
+.socialbrand-twitter:hover::after {
+    animation: 0.3s cubic-bezier(.58, 0, .42, 1) btn-social forwards;
+}
+
+/* Pinterest */
+
+.socialbrand-pinterest i::before {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    width: 40px;
+    color: white;
+    border-radius: 0 50% 50% 0;
+    box-shadow: rgb(0 0 0 / 50%) 0px 3px 8px;
+    background-color: $color-black;
+    align-items: center;
+    margin-bottom: 5px;
+    padding-left: 7px;
+    justify-content: flex-start;
+}
+
+.socialbrand-pinterest::after {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    content: "Pinterest";
+    text-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    padding-left: 50px;
+    color: white;
+    padding-right: 20px;
+    margin-top: -45px;
+    height: 40px;
+    border-radius: 0 20px 20px 0;
+    background: #E60023;
+    transform: translateX(-150px);
+    z-index: -1;
+}
+
+.socialbrand-pinterest:hover::after {
+    animation: 0.3s cubic-bezier(.58, 0, .42, 1) btn-social forwards;
+}
+
+@media screen and (max-width: 768px){
+    .social-container {
+        display: none;
+    }
+}

@@ -4,7 +4,7 @@ import CarouselPrincipal from '../components/animations/Carousel';
 import Footer from '../components/Footer';
 import NavbarComponent from '../components/Navbar';
 
-const Peripheriques = () => {
+const EcranPC = () => {
     return (
         <>
             <NavbarComponent />
@@ -14,7 +14,7 @@ const Peripheriques = () => {
             <Container>
                 <main>
                     <section>
-                        <h1>Périphérique</h1>
+                        <h1>Ecran PC</h1>
                     </section>
                 </main>
             </Container>
@@ -23,4 +23,4 @@ const Peripheriques = () => {
     );
 };
 
-export default Peripheriques;
+export default EcranPC;

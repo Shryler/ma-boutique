@@ -6,11 +6,13 @@ import Brands from '../components/Brands';
 import Category from '../components/Category';
 import Footer from '../components/Footer';
 import NavbarComponent from '../components/Navbar';
+import ReseauxSociaux from '../components/ReseauxSociaux';
 
 const Home = () => {
     return (
         <>
             <NavbarComponent />
+            <ReseauxSociaux />
             <Container fluid>
                 <CarouselPrincipal />
             </Container>
