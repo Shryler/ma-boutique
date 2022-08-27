@@ -18,14 +18,14 @@ const CarouselPrincipal = () => {
                 <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div className="carousel-inner">
-                <div className="carousel-item active" color="#bdbebf">
-                    <img src="/img/carousel/slider1.png" className="d-block w-100" alt="..." />
+                <div className="carousel-item active" color="#f0f0f0">
+                    <img src="/img/carousel/slider1.png" className="d-block" alt="..." />
                 </div>
-                <div className="carousel-item" color="black">
-                    <img src="/img/carousel/slider2.png" className="d-block w-100" alt="..." />
+                <div className="carousel-item" color="#33276F">
+                    <img src="/img/carousel/slider2.png" className="d-block" alt="..." />
                 </div>
                 <div className="carousel-item" color="#f6ae28">
-                    <img src="/img/carousel/slider3.png" className="d-block w-100" alt="..." />
+                    <img src="/img/carousel/slider3.png" className="d-block" alt="..." />
                     {/* <div className="carousel-caption d-none d-md-block">
                         <h5>Third slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>

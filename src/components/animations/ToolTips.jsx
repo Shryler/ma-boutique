@@ -1,9 +1,9 @@
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 
-function ToolTips({button, text}) {
+function ToolTips({button, text, classSelect, offsetSelect = [0,0]}) {
   const renderTooltip = (props) => (
-    <Tooltip id="button-tooltip" style={{ margin: 0 }} {...props} >
+    <Tooltip id="button-tooltip" {...props} >
       {text}
     </Tooltip>
   );
@@ -13,8 +13,9 @@ function ToolTips({button, text}) {
       placement="bottom"
       delay={{ show: 250, hide: 400 }}
       overlay={renderTooltip}
+      offset={offsetSelect}
     >
-      <button className='me-2 navbar-btn'>{button}</button>
+      <button className={classSelect}>{button}</button>
     </OverlayTrigger>
   );
 }

@@ -7,7 +7,10 @@
 }
 
 .carousel-item img {
-    object-fit: scale-down;
+// object-fit: scale-down;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
 }
 
 @media screen and (max-width: 576px){
