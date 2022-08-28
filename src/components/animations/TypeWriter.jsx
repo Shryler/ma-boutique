@@ -12,13 +12,13 @@ function TypeWriter() {
         
        typewriter
        
-       .typeString("Périphériques")
+       .typeString("périphériques")
        .pauseFor(1000)
        .deleteAll()
-       .typeString("Ordinateurs")
+       .typeString("ordinateurs")
        .pauseFor(1000)
        .deleteAll()
-       .typeString("Tablettes")
+       .typeString("tablettes")
        .pauseFor(1000)
        .deleteAll()
        .start();

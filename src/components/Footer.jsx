@@ -11,7 +11,7 @@ const Footer = () => {
         <footer>
             <div className="newsletters">
                 <Container>
-                    <p>Inscription à la newsletter</p>
+                    <p>inscription à la newsletter</p>
                 </Container>
             </div>
             <div className="footer">

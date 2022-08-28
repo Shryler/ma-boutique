@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from 'react-bootstrap/esm/Container';
 import CarouselPrincipal from '../components/animations/Carousel';
+import ReturnTop from '../components/animations/ReturnTop';
 import SwiperMod from '../components/animations/Swiper';
 import Brands from '../components/Brands';
 import Category from '../components/Category';
@@ -13,6 +14,7 @@ const Home = () => {
         <>
             <NavbarComponent />
             <ReseauxSociaux />
+            <ReturnTop />
             <Container fluid>
                 <CarouselPrincipal />
             </Container>
