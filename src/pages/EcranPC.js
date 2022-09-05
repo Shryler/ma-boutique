@@ -1,7 +1,6 @@
 import React from 'react';
 import Container from 'react-bootstrap/esm/Container';
 import Footer from '../components/Footer';
-import LoginAndRegistration from '../components/LoginAndRegistration';
 import NavbarComponent from '../components/Navbar';
 
 const EcranPC = () => {
@@ -10,7 +9,7 @@ const EcranPC = () => {
             <NavbarComponent />
             <Container>
                 <main>
-                    <LoginAndRegistration />
+                    <h1>Ecran PC</h1>
                 </main>
             </Container>
             <Footer />

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const CarouselPrincipal = () => {
     
-    React.useEffect(() => {
+    useEffect(() => {
         const myCarousel = document.getElementById('carouselExampleFade');
         myCarousel.addEventListener('slide.bs.carousel', e => {
             const newBackgroundColor = e.relatedTarget.attributes[1].value;

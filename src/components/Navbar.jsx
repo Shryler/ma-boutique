@@ -40,7 +40,7 @@ function NavbarComponent() {
             <Form.Control type="search" placeholder="Recherche" aria-label="Search" />
           </Form>
           <div className='d-flex ms-2 navbar-nav d-flex text-light'>
-            <ToolTips button={<FaRegUser size="25" />} text={"Se connecter / S'enregistrer"} classSelect={"me-2 navbar-btn"} offsetSelect={[0,13]}></ToolTips>
+            <NavLink to="/connection"><ToolTips button={<FaRegUser size="25" />} text={"Se connecter / S'enregistrer"} classSelect={"me-2 navbar-btn"} offsetSelect={[0,13]}></ToolTips></NavLink>
             <ToolTips button={<BsBasket size="25" />} text={"Panier"} classSelect={"me-2 navbar-btn"} offsetSelect={[0,13]}></ToolTips>
           </div>
         </Navbar.Collapse>
