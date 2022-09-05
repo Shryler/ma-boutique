@@ -46,7 +46,8 @@ const FilterProducts = () => {
                             </div>
                             <div className="swiper-item-details price">
                                 <div className='container-stock'>
-                                    <span>Disponible</span>
+                                    <div className="stock-title">Dispo</div>
+                                    <div className="stock-disponibilite">En stock</div>
                                 </div>
                                 <div className='container-price'>
                                     <div className="swiper-item-price">100€<sup>00</sup></div>
@@ -70,7 +71,8 @@ const FilterProducts = () => {
                             </div>
                             <div className="swiper-item-details price">
                                 <div className='container-stock'>
-                                    <span>Disponible</span>
+                                    <div className="stock-title">Dispo</div>
+                                    <div className="stock-disponibilite">En stock</div>
                                 </div>
                                 <div className='container-price'>
                                     <div className="swiper-item-price">100€<sup>00</sup></div>
@@ -93,7 +95,8 @@ const FilterProducts = () => {
                             </div>
                             <div className="swiper-item-details price">
                                 <div className='container-stock'>
-                                    <span>Disponible</span>
+                                    <div className="stock-title">Dispo</div>
+                                    <div className="stock-disponibilite">En stock</div>
                                 </div>
                                 <div className='container-price'>
                                     <div className="swiper-item-price">100€<sup>00</sup></div>
