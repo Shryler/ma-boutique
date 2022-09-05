@@ -1,18 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.e504d53d.css",
-    "main.js": "/static/js/main.bb1b24e2.js",
-    "static/js/787.210b0556.chunk.js": "/static/js/787.210b0556.chunk.js",
+    "main.css": "/static/css/main.2c1346ec.css",
+    "main.js": "/static/js/main.43dea070.js",
+    "static/media/RobotoCondensed-Regular.ttf": "/static/media/RobotoCondensed-Regular.fc3d2f2e3a203d0037c1.ttf",
     "static/media/BebasNeue-Regular.ttf": "/static/media/BebasNeue-Regular.12e3683f9192436a7be8.ttf",
-    "static/media/ATypewriterForMe.ttf": "/static/media/ATypewriterForMe.088f0a9e161b33880fb6.ttf",
-    "static/media/FredokaOne-Regular.ttf": "/static/media/FredokaOne-Regular.4aea26dd6637dfac0fac.ttf",
     "index.html": "/index.html",
-    "main.e504d53d.css.map": "/static/css/main.e504d53d.css.map",
-    "main.bb1b24e2.js.map": "/static/js/main.bb1b24e2.js.map",
-    "787.210b0556.chunk.js.map": "/static/js/787.210b0556.chunk.js.map"
+    "main.2c1346ec.css.map": "/static/css/main.2c1346ec.css.map",
+    "main.43dea070.js.map": "/static/js/main.43dea070.js.map"
   },
   "entrypoints": [
-    "static/css/main.e504d53d.css",
-    "static/js/main.bb1b24e2.js"
+    "static/css/main.2c1346ec.css",
+    "static/js/main.43dea070.js"
   ]
 }
