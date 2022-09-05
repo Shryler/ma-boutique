@@ -12,7 +12,7 @@ import ReseauxSociaux from '../components/ReseauxSociaux';
 const Home = () => {
     return (
         <>
-            <NavbarComponent />
+            <NavbarComponent /> 
             <ReseauxSociaux />
             <ReturnTop />
             <Container fluid>
