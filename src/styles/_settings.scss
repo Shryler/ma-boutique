@@ -26,7 +26,7 @@ $color-greydark: #282b2b;
 $color-black: #212529;
 
 $theme-colors: (
-  "primary": #00d6bc,
+  "primary": $color-primary,
 );
 
 * {
