@@ -15,6 +15,7 @@ section.LoginAndRegistration{
         height: 500px;
         background: $color-white;
         box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        overflow: hidden;
     }
     .container .user {
         position: absolute;
@@ -132,6 +133,7 @@ section.LoginAndRegistration{
     }
     .container .signinBx .imgBx {
         top: 0;
+        transition:0.5s;
     }
     .container.active .signinBx .imgBx{
         top: -100%;

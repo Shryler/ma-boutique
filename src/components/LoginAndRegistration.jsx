@@ -2,7 +2,7 @@ import React from 'react';
 
 const LoginAndRegistration = () => {
 
-    function toggleForm(e){
+    function toggleForm(e) {
         e.preventDefault();
         let container = document.querySelector(".LoginAndRegistration");
         container = container.firstChild;
@@ -27,8 +27,6 @@ const LoginAndRegistration = () => {
                     </div>
                 </div>
                 <div className="user signupBx">
-                    <div className="imgBx">
-                    </div>
                     <div className="formBx">
                         <form>
                             <h2>Créer un nouveau compte</h2>
@@ -40,8 +38,10 @@ const LoginAndRegistration = () => {
                             <p className="signup">Vous avez déjà un compte ? <a href="/" onClick={(e) => toggleForm(e)}>S'identifier</a></p>
                         </form>
                     </div>
-                </div>
+                    <div className="imgBx">
                         <img src="/img/signUp.jpg" alt="" />
+                    </div>
+                </div>
             </div>
         </section>
     );
