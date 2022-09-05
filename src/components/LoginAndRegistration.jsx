@@ -9,6 +9,12 @@ const LoginAndRegistration = () => {
         container.classList.toggle('active');
     }
 
+    const handleFormSignInSubmit = (e) => {
+        e.preventDefault();
+        const jsonDataSignIn = Object.fromEntries(new FormData(e.target));
+        console.log(jsonDataSignIn);
+    }
+
     return (
         <section className='LoginAndRegistration'>
             <div className='container'>
@@ -17,7 +23,7 @@ const LoginAndRegistration = () => {
                         <img src="/img/signIn.jpg" alt="" />
                     </div>
                     <div className="formBx">
-                        <form>
+                        <form onSubmit={handleFormSignInSubmit}>
                             <h2>Se connecter</h2>
                             <input type="text" placeholder="Login" />
                             <input type="password" placeholder="Password" />
