@@ -25,7 +25,7 @@ section.LoginAndRegistration {
   .container .formBx {
     padding: 1rem;
   }
-  
+
   .container .user {
     position: absolute;
     top: 0;
@@ -74,7 +74,7 @@ section.LoginAndRegistration {
   .container .user .formBx input {
     width: 100%;
     padding: 1rem;
-    background-color: #e5e5e5;
+    background-color: $color-whitedark;
     color: #333;
     border: none;
     outline: none;
@@ -161,7 +161,7 @@ section.LoginAndRegistration {
     }
 
     .container .user .formBx {
-      flex:1;
+      flex: 1;
     }
   }
 }
