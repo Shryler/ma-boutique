@@ -54,7 +54,7 @@ export default function CarouselPrincipal() {
             onSlideChange={(e) => handleChange(e)}
             effect={"fade"}
             autoplay={{
-                delay: 8000,
+                delay: 7000,
                 disableOnInteraction: false,
             }}>
             <SwiperSlide />
