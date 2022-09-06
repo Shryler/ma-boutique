@@ -26,7 +26,7 @@ const LoginAndRegistration = () => {
             <div className='container'>
                 <div className="user signinBx">
                     <div className="imgBx">
-                        <img src="/img/signIn.jpg" alt="" />
+                        <img src="/img/signIn.webp" alt="" />
                     </div>
                     <div className="formBx">
                         <form onSubmit={handleFormSignInSubmit}>
@@ -51,7 +51,7 @@ const LoginAndRegistration = () => {
                         </form>
                     </div>
                     <div className="imgBx">
-                        <img src="/img/signUp.jpg" alt="" />
+                        <img src="/img/signUp.webp" alt="" />
                     </div>
                 </div>
             </div>
