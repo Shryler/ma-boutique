@@ -2,6 +2,13 @@
   background-position: top center;
   transition: 0.8s ease;
 }
+.swiper#myCarousel {
+  position:initial !important;
+}
+
+.pad400 {
+  padding-top:400px;
+}
 
 .slide1 {
   background-image: url("../../../public/img/carousel/slider1.png");
@@ -17,4 +24,49 @@
   background-image: url("../../../public/img/carousel/slider3.png");
   background-position: top center;
   background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 992px) {
+  .pad400 {
+    padding-top: 300px;
+  }
+  .slide1 {
+    background-image: url("../../../public/img/carousel/slider1-990.png");
+  }
+  .slide2 {
+    background-image: url("../../../public/img/carousel/slider2-990.png");
+  }
+  .slide3 {
+    background-image: url("../../../public/img/carousel/slider3-990.png");
+  }
+}
+@media screen and (max-width: 768px) {
+  .pad400 {
+    padding-top: 200px;
+  }
+
+  .slide1 {
+    background-image: url("../../../public/img/carousel/slider1-768.png");
+  }
+  .slide2 {
+    background-image: url("../../../public/img/carousel/slider2-768.png");
+  }
+  .slide3 {
+    background-image: url("../../../public/img/carousel/slider3-768.png");
+  }
+}
+@media screen and (max-width: 500px) {
+  .pad400 {
+    padding-top: 160px;
+  }
+
+  .slide1 {
+    background-image: url("../../../public/img/carousel/slider1-500.png");
+  }
+  .slide2 {
+    background-image: url("../../../public/img/carousel/slider2-500.png");
+  }
+  .slide3 {
+    background-image: url("../../../public/img/carousel/slider3-500.png");
+  }
 }

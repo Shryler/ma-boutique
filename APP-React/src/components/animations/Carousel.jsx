@@ -4,9 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import 'swiper/css/autoplay';
-import "swiper/css/effect-fade";
 
-import { Autoplay, EffectFade } from "swiper";
+import { Autoplay } from "swiper";
 
 export default function CarouselPrincipal() {
 
@@ -48,11 +47,9 @@ export default function CarouselPrincipal() {
 
     return (
         <Swiper
-            pagination={true}
-            modules={[EffectFade, Autoplay]}
+            modules={[Autoplay]}
             id="myCarousel"
             onSlideChange={(e) => handleChange(e)}
-            effect={"fade"}
             autoplay={{
                 delay: 7000,
                 disableOnInteraction: false,

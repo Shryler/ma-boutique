@@ -1,0 +1,13 @@
+.section {
+ text-align: center;
+    padding:1rem;
+}
+
+.section h2 {
+    color: $color-black;
+    font-family: $font-title;
+    letter-spacing: 0.3rem;
+    margin: 1rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 5px rgba(150, 150, 150, 1);
+}
