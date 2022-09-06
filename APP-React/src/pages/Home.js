@@ -18,8 +18,7 @@ const Home = () => {
                 <ReturnTop />
                 <Container fluid>
                     <CarouselPrincipal />
-                </Container>
-                <Container>
+                <Container className='pad400'>
                     <main>
                         <section className='section'>
                             <h2>Nouveautés</h2>
@@ -34,6 +33,7 @@ const Home = () => {
                             <Brands />
                         </section>
                     </main>
+                </Container>
                 </Container>
                 <Footer />
             </div>
