@@ -12,29 +12,31 @@ import ReseauxSociaux from '../components/ReseauxSociaux';
 const Home = () => {
     return (
         <>
-            <NavbarComponent /> 
-            <ReseauxSociaux />
-            <ReturnTop />
-            <Container fluid>
-                <CarouselPrincipal />
-            </Container>
-            <Container>
-                <main>
-                    <section className='section'>
-                        <h2>Nouveautés</h2>
-                        <SwiperMod />
-                    </section>
-                    <section className='section'>
-                        <h2>Catégories</h2>
-                        <Category />
-                    </section>
-                    <section className='section'>
-                        <h2>Nos shops de marques</h2>
-                        <Brands />
-                    </section>
-                </main>
-            </Container>
-            <Footer />
+            <div id="changeColor">
+                <NavbarComponent />
+                <ReseauxSociaux />
+                <ReturnTop />
+                <Container fluid>
+                    <CarouselPrincipal />
+                </Container>
+                <Container>
+                    <main>
+                        <section className='section'>
+                            <h2>Nouveautés</h2>
+                            <SwiperMod />
+                        </section>
+                        <section className='section'>
+                            <h2>Catégories</h2>
+                            <Category />
+                        </section>
+                        <section className='section'>
+                            <h2>Nos shops de marques</h2>
+                            <Brands />
+                        </section>
+                    </main>
+                </Container>
+                <Footer />
+            </div>
         </>
     );
 };

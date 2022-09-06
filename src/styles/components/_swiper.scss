@@ -28,7 +28,7 @@
   height: 100%;
 }
 
-.swiper-pagination {
+section .mySwiper .swiper-pagination {
     position: initial !important;
 }
 
@@ -105,6 +105,8 @@ a:hover.swiper-item-title  {
 }
 
 .swiper-items-img {
+    display: flex;
+    justify-content: center;
     height: 200px;
     transition: 0.4s;
 }
