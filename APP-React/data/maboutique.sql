@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 07 sep. 2022 à 13:42
+-- Généré le : mer. 07 sep. 2022 à 16:47
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -53,18 +53,19 @@ INSERT INTO `appuser` (`id`, `password`, `mail`, `active`, `isDeleted`) VALUES
 DROP TABLE IF EXISTS `brand`;
 CREATE TABLE IF NOT EXISTS `brand` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `name_brand` varchar(255) DEFAULT NULL,
   `isDeleted` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `brand`
 --
 
-INSERT INTO `brand` (`id`, `name`, `isDeleted`) VALUES
+INSERT INTO `brand` (`id`, `name_brand`, `isDeleted`) VALUES
 (1, 'Logitech', NULL),
-(2, 'LG', NULL);
+(2, 'LG', NULL),
+(3, 'Razer', NULL);
 
 -- --------------------------------------------------------
 
@@ -75,7 +76,7 @@ INSERT INTO `brand` (`id`, `name`, `isDeleted`) VALUES
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `category` varchar(255) DEFAULT NULL,
   `isDeleted` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
@@ -84,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `category` (
 -- Déchargement des données de la table `category`
 --
 
-INSERT INTO `category` (`id`, `name`, `isDeleted`) VALUES
+INSERT INTO `category` (`id`, `category`, `isDeleted`) VALUES
 (1, 'Ecran PC', NULL),
 (2, 'Clavier/Souris/Tapis', NULL),
 (3, 'Casque & Micro', NULL),
@@ -109,14 +110,15 @@ CREATE TABLE IF NOT EXISTS `category_product` (
   PRIMARY KEY (`id`),
   KEY `id_Product` (`id_Product`),
   KEY `id_Category` (`id_Category`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `category_product`
 --
 
 INSERT INTO `category_product` (`id_Product`, `id_Category`, `id`) VALUES
-(1, 1, 1);
+(1, 1, 1),
+(2, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -204,14 +206,15 @@ CREATE TABLE IF NOT EXISTS `image` (
   `id_Product` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_Product` (`id_Product`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `image`
 --
 
 INSERT INTO `image` (`id`, `url`, `isDeleted`, `id_Product`) VALUES
-(1, 'https://media.ldlc.com/r374/ld/products/00/05/96/73/LD0005967352.jpg\r\nhttps://media.ldlc.com/r1600/ld/products/00/05/96/73/LD0005967353.jpg\r\nhttps://media.ldlc.com/r1600/ld/products/00/05/96/73/LD0005967354.jpg\r\nhttps://media.ldlc.com/r1600/ld/products/00/05/96/73/LD0005967355.jpg\r\nhttps://media.ldlc.com/r1600/ld/products/00/05/96/73/LD0005967356.jpg', NULL, NULL);
+(1, 'https://media.ldlc.com/r374/ld/products/00/05/96/73/LD0005967352.jpg, \r\nhttps://media.ldlc.com/r1600/ld/products/00/05/96/73/LD0005967353.jpg, \r\nhttps://media.ldlc.com/r1600/ld/products/00/05/96/73/LD0005967354.jpg, \r\nhttps://media.ldlc.com/r1600/ld/products/00/05/96/73/LD0005967355.jpg, \r\nhttps://media.ldlc.com/r1600/ld/products/00/05/96/73/LD0005967356.jpg ', NULL, 1),
+(2, 'https://media.ldlc.com/r1600/ld/products/00/04/73/99/LD0004739987_2.jpg, \r\nhttps://media.ldlc.com/r1600/ld/products/00/04/74/00/LD0004740007_2.jpg, \r\nhttps://media.ldlc.com/r1600/ld/products/00/04/74/00/LD0004740002_2.jpg, \r\nhttps://media.ldlc.com/r1600/ld/products/00/04/73/99/LD0004739997_2.jpg, \r\nhttps://media.ldlc.com/r1600/ld/products/00/04/73/99/LD0004739992_2.jpg, ', NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -242,7 +245,7 @@ CREATE TABLE IF NOT EXISTS `product` (
 --
 
 INSERT INTO `product` (`id`, `reference`, `designation`, `min_description`, `description`, `price`, `rate_tva`, `stock_min`, `stock_qty`, `stock_max`, `isDeleted`, `id_Brand`) VALUES
-(1, '16MQ70', 'LG 16\" LED - gram +view 16MQ70', '2560 x 1600 pixels - 16/10 - USB-C - Portrait/Paysage - Portable - Etui/Support - Argent', 'Avec l\'écran portable LG gram +view 16MQ70, vous avez entre vos mains une solution efficace et confortable pour travailler dans les meilleures conditions, et n\'importe où ! Léger, ce moniteur IPS 16 pouces se glisse aisément dans vos affaires et s\'installera très rapidement via une connexion USB-C.', 329.95, 20, 0, 3, 5, NULL, 2),
+(1, '16MQ70', 'LG 16\" LED - gram +view 16MQ70', '2560 x 1600 pixels - 16/10 - USB-C - Portrait/Paysage - Portable - Etui/Support - Argent', 'Avec l\'écran portable LG gram +view 16MQ70, vous avez entre vos mains une solution efficace et confortable pour travailler dans les meilleures conditions, et n\'importe où ! Léger, ce moniteur IPS 16 pouces se glisse aisément dans vos affaires et s\'installera très rapidement via une connexion USB-C.', 329.95, 20, 0, 3, 5, NULL, 3),
 (2, 'Logitech Corded Keyboard K280e', 'Logitech Corded Keyboard K280e', 'Clavier filaire - résistant aux éclaboussures - AZERTY, Français', 'Idéal pour le travail en entreprise, le Logitech Corded Keyboard K280e est doté d\'un châssis renforcé, de pattes d\'inclinaison robustes et d\'une structure résistante aux éclaboussures. Conçu pour résister à des années d\'utilisation intensive en bureau, il est doté de touches ultra-plates.', 24.95, 20, 0, 6, 20, NULL, 1);
 
 -- --------------------------------------------------------
@@ -259,14 +262,15 @@ CREATE TABLE IF NOT EXISTS `rating` (
   `id_Product` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_Product` (`id_Product`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `rating`
 --
 
 INSERT INTO `rating` (`id`, `score`, `isDeleted`, `id_Product`) VALUES
-(1, 3, NULL, 1);
+(1, 3, NULL, 1),
+(2, 4, NULL, 2);
 
 --
 -- Contraintes pour les tables déchargées
