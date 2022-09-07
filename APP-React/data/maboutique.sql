@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 07 sep. 2022 à 09:46
+-- Généré le : mer. 07 sep. 2022 à 13:42
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `name` varchar(255) DEFAULT NULL,
   `isDeleted` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `category`
@@ -109,7 +109,14 @@ CREATE TABLE IF NOT EXISTS `category_product` (
   PRIMARY KEY (`id`),
   KEY `id_Product` (`id_Product`),
   KEY `id_Category` (`id_Category`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `category_product`
+--
+
+INSERT INTO `category_product` (`id_Product`, `id_Category`, `id`) VALUES
+(1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -228,14 +235,15 @@ CREATE TABLE IF NOT EXISTS `product` (
   `id_Brand` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_Brand` (`id_Brand`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `product`
 --
 
 INSERT INTO `product` (`id`, `reference`, `designation`, `min_description`, `description`, `price`, `rate_tva`, `stock_min`, `stock_qty`, `stock_max`, `isDeleted`, `id_Brand`) VALUES
-(1, '16MQ70', 'LG 16\" LED - gram +view 16MQ70', '2560 x 1600 pixels - 16/10 - USB-C - Portrait/Paysage - Portable - Etui/Support - Argent', 'Avec l\'écran portable LG gram +view 16MQ70, vous avez entre vos mains une solution efficace et confortable pour travailler dans les meilleures conditions, et n\'importe où ! Léger, ce moniteur IPS 16 pouces se glisse aisément dans vos affaires et s\'installera très rapidement via une connexion USB-C.', 329.95, 20, 0, 3, 5, NULL, 2);
+(1, '16MQ70', 'LG 16\" LED - gram +view 16MQ70', '2560 x 1600 pixels - 16/10 - USB-C - Portrait/Paysage - Portable - Etui/Support - Argent', 'Avec l\'écran portable LG gram +view 16MQ70, vous avez entre vos mains une solution efficace et confortable pour travailler dans les meilleures conditions, et n\'importe où ! Léger, ce moniteur IPS 16 pouces se glisse aisément dans vos affaires et s\'installera très rapidement via une connexion USB-C.', 329.95, 20, 0, 3, 5, NULL, 2),
+(2, 'Logitech Corded Keyboard K280e', 'Logitech Corded Keyboard K280e', 'Clavier filaire - résistant aux éclaboussures - AZERTY, Français', 'Idéal pour le travail en entreprise, le Logitech Corded Keyboard K280e est doté d\'un châssis renforcé, de pattes d\'inclinaison robustes et d\'une structure résistante aux éclaboussures. Conçu pour résister à des années d\'utilisation intensive en bureau, il est doté de touches ultra-plates.', 24.95, 20, 0, 6, 20, NULL, 1);
 
 -- --------------------------------------------------------
 
