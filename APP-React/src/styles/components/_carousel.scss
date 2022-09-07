@@ -11,17 +11,17 @@
 }
 
 .slide1 {
-  background-image: url("../../../public/img/carousel/slider1.png");
+  background-image: url("../public/img/carousel/slider1.png");
   background-repeat: no-repeat;
   background-position: top center;
 }
 .slide2 {
-  background-image: url("../../../public/img/carousel/slider2.png");
+  background-image: url("../public/img/carousel/slider2.png");
   background-position: top center;
   background-repeat: no-repeat;
 }
 .slide3 {
-  background-image: url("../../../public/img/carousel/slider3.png");
+  background-image: url("../public/img/carousel/slider3.png");
   background-position: top center;
   background-repeat: no-repeat;
 }
@@ -31,13 +31,13 @@
     padding-top: 300px;
   }
   .slide1 {
-    background-image: url("../../../public/img/carousel/slider1-990.png");
+    background-image: url("../public/img/carousel/slider1-990.png");
   }
   .slide2 {
-    background-image: url("../../../public/img/carousel/slider2-990.png");
+    background-image: url("../public/img/carousel/slider2-990.png");
   }
   .slide3 {
-    background-image: url("../../../public/img/carousel/slider3-990.png");
+    background-image: url("../public/img/carousel/slider3-990.png");
   }
 }
 @media screen and (max-width: 768px) {
@@ -46,13 +46,13 @@
   }
 
   .slide1 {
-    background-image: url("../../../public/img/carousel/slider1-768.png");
+    background-image: url("../public/img/carousel/slider1-768.png");
   }
   .slide2 {
-    background-image: url("../../../public/img/carousel/slider2-768.png");
+    background-image: url("../public/img/carousel/slider2-768.png");
   }
   .slide3 {
-    background-image: url("../../../public/img/carousel/slider3-768.png");
+    background-image: url("../public/img/carousel/slider3-768.png");
   }
 }
 @media screen and (max-width: 500px) {
@@ -61,12 +61,12 @@
   }
 
   .slide1 {
-    background-image: url("../../../public/img/carousel/slider1-500.png");
+    background-image: url("../public/img/carousel/slider1-500.png");
   }
   .slide2 {
-    background-image: url("../../../public/img/carousel/slider2-500.png");
+    background-image: url("../public/img/carousel/slider2-500.png");
   }
   .slide3 {
-    background-image: url("../../../public/img/carousel/slider3-500.png");
+    background-image: url("../public/img/carousel/slider3-500.png");
   }
 }

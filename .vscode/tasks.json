@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "sass",
+			"path": "APP-React",
+			"problemMatcher": [],
+			"label": "npm: sass - APP-React",
+			"detail": "sass --watch src/sass/index.scss:src/index.css"
+		}
+	]
+}

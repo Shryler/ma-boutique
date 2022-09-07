@@ -1,15 +1,16 @@
+
 @font-face {
   font-family: "font-Michroma";
-  src: url(../assets/fonts/BebasNeue-Regular.ttf);
+  src: url(../public/fonts/BebasNeue-Regular.ttf);
 
   font-family: "Major Mono Display", monospace;
-  @import url(../assets/fonts/MajorMonoDisplay-Regular.ttf);
+  @import url(../public/fonts/MajorMonoDisplay-Regular.ttf);
   @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
 }
 
 @font-face {
   font-family: "Roboto";
-  src: url(../assets/fonts/RobotoCondensed-Regular.ttf);
+  src: url(../public/fonts/RobotoCondensed-Regular.ttf);
 }
 
 $font-title: "font-Michroma", sans-serif;
@@ -22,6 +23,8 @@ $color-whitedark: #e5e5e5;
 $color-grey: #bdbebf;
 $color-greydark: #282b2b;
 $color-black: #212529;
+
+$primary: #00d6bc;
 
 $theme-colors: (
   "primary": #00d6bc,
@@ -88,6 +91,3 @@ hr {
 .text-wrap {
   white-space: nowrap !important;
 }
-
-// BootStrap
-@import "node_modules/bootstrap/scss/bootstrap";

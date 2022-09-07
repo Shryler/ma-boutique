@@ -13,6 +13,7 @@ const EcranPC = () => {
                     <h1>Ecran PC</h1>
                     <NavLink to="/produits">Voir Les produits</NavLink>
                 </main>
+                
             </Container>
             <Footer />
         </>
