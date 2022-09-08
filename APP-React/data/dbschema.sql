@@ -1,110 +1,104 @@
-CREATE TABLE Category(
+CREATE TABLE category(
    id INT AUTO_INCREMENT,
-   name VARCHAR(255),
-   isDeleted BOOLEAN,
+   category VARCHAR(255),
+   is_deleted BOOLEAN,
    PRIMARY KEY(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
-CREATE TABLE Brand(
+CREATE TABLE img(
    id INT AUTO_INCREMENT,
-   name VARCHAR(255),
-   isDeleted BOOLEAN,
+   url VARCHAR(255),
+   is_deleted BOOLEAN,
    PRIMARY KEY(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
-CREATE TABLE AppUser(
+CREATE TABLE brand(
+   id INT AUTO_INCREMENT,
+   name_brand VARCHAR(255),
+   is_deleted BOOLEAN,
+   PRIMARY KEY(id)
+);
+
+CREATE TABLE app_user(
    id INT AUTO_INCREMENT,
    password VARCHAR(255),
    mail VARCHAR(255),
    active BOOLEAN,
-   isDeleted BOOLEAN,
+   is_deleted BOOLEAN,
    PRIMARY KEY(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
-CREATE TABLE Product(
+CREATE TABLE product(
    id INT AUTO_INCREMENT,
-   reference VARCHAR(255),
    designation TEXT,
    min_description TEXT,
    description TEXT,
-   price DOUBLE,
-   rate_tva DOUBLE,
+   current_price DOUBLE,
+   current_rate_tva DOUBLE,
    stock_min INT,
    stock_qty INT,
    stock_max INT,
-   isDeleted BOOLEAN,
-   id_Brand INT,
+   is_deleted BOOLEAN,
+   id_brand INT,
    PRIMARY KEY(id),
-   FOREIGN KEY(id_Brand) REFERENCES Brand(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+   FOREIGN KEY(id_brand) REFERENCES brand(id)
+);
 
-CREATE TABLE Customer(
+CREATE TABLE customer(
    id INT AUTO_INCREMENT,
    inscription DATE,
-   civility VARCHAR(2),
+   civility TEXT,
    name VARCHAR(255),
    surname VARCHAR(255),
    birthdate DATE,
    address TEXT,
    country_code INT,
    city VARCHAR(255),
-   phoneNumber INT,
-   isDeleted BOOLEAN,
-   id_AppUser INT,
+   phone_number INT,
+   is_deleted BOOLEAN,
+   id_app_user INT,
    PRIMARY KEY(id),
-   FOREIGN KEY(id_AppUser) REFERENCES AppUser(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+   FOREIGN KEY(id_app_user) REFERENCES app_user(id)
+);
 
-CREATE TABLE Rating(
-   id INT AUTO_INCREMENT,
-   score INT,
-   isDeleted BOOLEAN,
-   id_Product INT,
-   PRIMARY KEY(id),
-   FOREIGN KEY(id_Product) REFERENCES Product(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-CREATE TABLE Command(
+CREATE TABLE command(
    id INT AUTO_INCREMENT,
    date_ordered DATETIME,
-   number VARCHAR(255),
-   status VARCHAR(255),
-   command_nb INT,
+   cmd_number INT,
+   status INT,
    bill_nb INT,
-   isDeleted BOOLEAN,
-   id_Customer INT,
+   is_deleted BOOLEAN,
+   id_customer INT,
    PRIMARY KEY(id),
-   FOREIGN KEY(id_Customer) REFERENCES Customer(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+   FOREIGN KEY(id_customer) REFERENCES customer(id)
+);
 
-CREATE TABLE Command_line(
+CREATE TABLE command_line(
    id INT AUTO_INCREMENT,
    quantity INT,
    price DOUBLE,
    rate_tva DOUBLE,
-   id_Rating INT,
-   id_Product INT,
-   id_Command INT,
+   id_product INT,
+   id_command INT,
    PRIMARY KEY(id),
-   FOREIGN KEY(id_Rating) REFERENCES Rating(id),
-   FOREIGN KEY(id_Product) REFERENCES Product(id),
-   FOREIGN KEY(id_Command) REFERENCES Command(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+   FOREIGN KEY(id_product) REFERENCES product(id),
+   FOREIGN KEY(id_command) REFERENCES command(id)
+);
 
-CREATE TABLE Image(
-   id INT AUTO_INCREMENT,
-   url VARCHAR(255),
-   isDeleted BOOLEAN,
-   id_Product INT,
-   PRIMARY KEY(id),
-   FOREIGN KEY(id_Product) REFERENCES Product(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-CREATE TABLE Category_Product(
-   id_Product INT,
-   id_Category INT,
+CREATE TABLE category_product(
+   id_product INT,
+   id_category INT,
    id INT AUTO_INCREMENT,
    PRIMARY KEY(id),
-   FOREIGN KEY(id_Product) REFERENCES Product(id),
-   FOREIGN KEY(id_Category) REFERENCES Category(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+   FOREIGN KEY(id_product) REFERENCES product(id),
+   FOREIGN KEY(id_category) REFERENCES category(id)
+);
+
+CREATE TABLE img_product(
+   id_img INT,
+   id_product INT,
+   id INT AUTO_INCREMENT,
+   PRIMARY KEY(id),
+   FOREIGN KEY(id_img) REFERENCES img(id),
+   FOREIGN KEY(id_product) REFERENCES product(id)
+);

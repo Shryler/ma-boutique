@@ -1,0 +1,10 @@
+insert into command (id, date_ordered, cmd_number, status, bill_nb, is_deleted, id_customer) values (1, '2022-07-17 16:29:02', '3815453585', 1, '1147149534', true, 1);
+insert into command (id, date_ordered, cmd_number, status, bill_nb, is_deleted, id_customer) values (2, '2022-01-03 03:27:45', '0309489806', 2, '7362281277', false, 2);
+insert into command (id, date_ordered, cmd_number, status, bill_nb, is_deleted, id_customer) values (3, '2022-06-29 21:07:41', '5100717408', 2, '5103571137', false, 3);
+insert into command (id, date_ordered, cmd_number, status, bill_nb, is_deleted, id_customer) values (4, '2022-05-18 09:06:44', '2944938444', 3, '1847810950', false, 4);
+insert into command (id, date_ordered, cmd_number, status, bill_nb, is_deleted, id_customer) values (5, '2022-06-25 18:30:23', '5663007873', 2, '9006384771', false, 5);
+insert into command (id, date_ordered, cmd_number, status, bill_nb, is_deleted, id_customer) values (6, '2021-11-11 02:22:22', '4403796168', 1, '7569531132', false, 6);
+insert into command (id, date_ordered, cmd_number, status, bill_nb, is_deleted, id_customer) values (7, '2021-10-16 06:51:20', '6126905687', 2, '0896761614', false, 7);
+insert into command (id, date_ordered, cmd_number, status, bill_nb, is_deleted, id_customer) values (8, '2022-07-22 04:10:19', '9323145165', 3, '7986313900', true, 8);
+insert into command (id, date_ordered, cmd_number, status, bill_nb, is_deleted, id_customer) values (9, '2021-11-13 14:26:53', '5100541695', 3, '2660067996', true, 9);
+insert into command (id, date_ordered, cmd_number, status, bill_nb, is_deleted, id_customer) values (10, '2022-03-13 01:25:25', '4960878142', 3, '8961810375', true, 10);
