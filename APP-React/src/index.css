@@ -11116,6 +11116,11 @@ section.LoginAndRegistration .container.active .signinBx .imgBx {
   justify-content: center;
 }
 
+.products-img img {
+  height: 100%;
+  width: 100%;
+}
+
 .products-details {
   flex: 4;
   display: flex;

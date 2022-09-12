@@ -6,17 +6,12 @@ import ToolTips from './animations/ToolTips';
 export default class FilterProducts extends Component {
     state = {
         products: null,
-        images: null,
     }
 
     componentDidMount = () => {
         axios.get(`http://api-maboutique/API/products/`)
             .then(res => {
                 this.setState({ products: Object.values(res.data) });
-            })
-        axios.get(`http://api-maboutique/API/img`)
-            .then(res => {
-                this.setState({ images: Object.values(res.data) });
             })
     };
 
@@ -55,16 +50,9 @@ export default class FilterProducts extends Component {
                             this.state.products.map(product => {
                                 return (
                                     <div className="products-container" key={product.id_product}>
-                                        {/* {
-                                            this.state.images &&
-                                            this.state.images.map(image => {
-                                                return (
-                                                    <div className="products-img" key={image.id_img}>
-                                                        <img src={image.url}  alt="" />
-                                                    </div>
-                                                )
-                                            })
-                                        } */}
+                                        <div className="products-img">
+                                            <img src={product.img} alt="" />
+                                        </div>
                                         <div className="products-details">
                                             <div className="info">
                                                 <div>
