@@ -82,7 +82,6 @@
     padding: 10px 0 8px;
     font-size: 10px;
     width: 100%;
-    line-height: 14px;
     border: 1px solid #ced4da;
     position: relative;
     text-transform: uppercase;
@@ -100,10 +99,18 @@
       background-color: #fff;
       padding: 0 7px;
     }
-    .stock-disponibilite {
+    .stock-dispo::before {
+      content: "En stock";
       color: #32B414;
       font-size:1.3em;
-      padding: 0.5rem;
+      padding: 1rem;
+      font-weight: bold;
+    }
+    .stock-indispo::before {
+      content: "Rupture";
+      color: $color-grey;
+      font-size:1.3em;
+      padding: 1rem;
       font-weight: bold;
     }
   }

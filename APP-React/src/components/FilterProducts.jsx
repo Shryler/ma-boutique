@@ -55,7 +55,7 @@ export default class FilterProducts extends Component {
                             this.state.products.map(product => {
                                 return (
                                     <div className="products-container" key={product.id_product}>
-                                        {
+                                        {/* {
                                             this.state.images &&
                                             this.state.images.map(image => {
                                                 return (
@@ -64,7 +64,7 @@ export default class FilterProducts extends Component {
                                                     </div>
                                                 )
                                             })
-                                        }
+                                        } */}
                                         <div className="products-details">
                                             <div className="info">
                                                 <div>
@@ -75,7 +75,7 @@ export default class FilterProducts extends Component {
                                             <div className="swiper-item-details price">
                                                 <div className='container-stock'>
                                                     <div className="stock-title">Dispo</div>
-                                                    <div className="stock-disponibilite">{product.stock_qty > 0 ? "En stock" : "Indisponible"}</div>
+                                                    <div className={product.stock_qty > 0 ? "stock-dispo" : "stock-indispo"}></div>
                                                 </div>
                                                 <div className='container-price'>
                                                     <div className="swiper-item-price">{product.current_price}€</div>

@@ -11153,7 +11153,6 @@ section.LoginAndRegistration .container.active .signinBx .imgBx {
   padding: 10px 0 8px;
   font-size: 10px;
   width: 100%;
-  line-height: 14px;
   border: 1px solid #ced4da;
   position: relative;
   text-transform: uppercase;
@@ -11171,10 +11170,18 @@ section.LoginAndRegistration .container.active .signinBx .imgBx {
   background-color: #fff;
   padding: 0 7px;
 }
-.products-details .price .container-stock .stock-disponibilite {
+.products-details .price .container-stock .stock-dispo::before {
+  content: "En stock";
   color: #32B414;
   font-size: 1.3em;
-  padding: 0.5rem;
+  padding: 1rem;
+  font-weight: bold;
+}
+.products-details .price .container-stock .stock-indispo::before {
+  content: "Rupture";
+  color: #bdbebf;
+  font-size: 1.3em;
+  padding: 1rem;
   font-weight: bold;
 }
 .products-details .price .container-stock span {
