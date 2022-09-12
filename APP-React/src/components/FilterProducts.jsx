@@ -1,115 +1,95 @@
-import React from 'react';
+import axios from 'axios';
+import React, { Component } from 'react';
 import { BsBasket } from 'react-icons/bs';
 import ToolTips from './animations/ToolTips';
 
-const FilterProducts = () => {
-    return (
-        <section>
-            <div className="containerFilterProducts">
-                <div className="filter">
-                    <h4>Filtrer les produits :</h4>
-                    <hr />
-                    <div className='containerInput'>
-                        <label htmlFor="">Chercher une référence</label>
-                        <input type="text" className='form-control' placeholder='Désignation, modèle...' />
-                    </div>
-                    <div className='containerInput'>
-                        <label htmlFor="">Marque</label>
-                        <select name="pets" id="pet-select" className='form-control' placeholder='Désignation, modèle...'>
-                            <option value="">--Please choose an option--</option>
-                            <option value="dog">Dog</option>
-                            <option value="cat">Cat</option>
-                            <option value="hamster">Hamster</option>
-                            <option value="parrot">Parrot</option>
-                            <option value="spider">Spider</option>
-                            <option value="goldfish">Goldfish</option>
-                        </select>
-                    </div>
-                    <div className='containerInput'>
-                        <label htmlFor="">Prix (min, max)</label>
-                        <input type="range" className="form-range" min="0" max="5" step="0.5" id="customRange3" />
-                    </div>
-                </div>
-                <div className="products">
-                    <h1>Produits</h1>
-                    <div className="products-container">
-                        <div className="products-img">
-                            <img src="https://media.ldlc.com/r150/ld/products/00/05/59/42/LD0005594295_2.jpg" alt="" />
-                        </div>
-                        <div className="products-details">
-                            <div className="info">
-                                <div>
-                                    <div className="title">Acer 24.5" LED - Nitro VG252QPbmiipx</div>
-                                    <div className="min-desc">1920 x 1080 pixels - 2 ms (gris à gris) - Format large 16/9 - Dalle IPS - 144 Hz - G-Sync Compatible - HDMI/DisplayPort - Noir</div>
-                                </div>
-                                <div className="avis">50 avis</div>
-                            </div>
-                            <div className="swiper-item-details price">
-                                <div className='container-stock'>
-                                    <div className="stock-title">Dispo</div>
-                                    <div className="stock-disponibilite">En stock</div>
-                                </div>
-                                <div className='container-price'>
-                                    <div className="swiper-item-price">100€<sup>00</sup></div>
-                                    <ToolTips button={<BsBasket size="25" />} text={"Ajouter au panier"} classSelect={"swiper-item-basket"}></ToolTips>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {/* faux contenu */}
-                    <div className="products-container">
-                        <div className="products-img">
-                            <img src="https://media.ldlc.com/r150/ld/products/00/05/59/42/LD0005594295_2.jpg" alt="" />
-                        </div>
-                        <div className="products-details">
-                            <div className="info">
-                                <div>
-                                    <div className="title">Acer 24.5" LED - Nitro VG252QPbmiipx</div>
-                                    <div className="min-desc">1920 x 1080 pixels - 2 ms (gris à gris) - Format large 16/9 - Dalle IPS - 144 Hz - G-Sync Compatible - HDMI/DisplayPort - Noir</div>
-                                </div>
-                                <div className="avis">50 avis</div>
-                            </div>
-                            <div className="swiper-item-details price">
-                                <div className='container-stock'>
-                                    <div className="stock-title">Dispo</div>
-                                    <div className="stock-disponibilite">En stock</div>
-                                </div>
-                                <div className='container-price'>
-                                    <div className="swiper-item-price">100€<sup>00</sup></div>
-                                    <ToolTips button={<BsBasket size="25" />} text={"Ajouter au panier"} classSelect={"swiper-item-basket"}></ToolTips>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="products-container">
-                        <div className="products-img">
-                            <img src="https://media.ldlc.com/r150/ld/products/00/05/59/42/LD0005594295_2.jpg" alt="" />
-                        </div>
-                        <div className="products-details">
-                            <div className="info">
-                                <div>
-                                    <div className="title">Acer 24.5" LED - Nitro VG252QPbmiipx</div>
-                                    <div className="min-desc">1920 x 1080 pixels - 2 ms (gris à gris) - Format large 16/9 - Dalle IPS - 144 Hz - G-Sync Compatible - HDMI/DisplayPort - Noir</div>
-                                </div>
-                                <div className="avis">50 avis</div>
-                            </div>
-                            <div className="swiper-item-details price">
-                                <div className='container-stock'>
-                                    <div className="stock-title">Dispo</div>
-                                    <div className="stock-disponibilite">En stock</div>
-                                </div>
-                                <div className='container-price'>
-                                    <div className="swiper-item-price">100€<sup>00</sup></div>
-                                    <ToolTips button={<BsBasket size="25" />} text={"Ajouter au panier"} classSelect={"swiper-item-basket"}></ToolTips>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {/* faux contenu */}
-                </div>
-            </div>
-        </section>
-    );
-};
+export default class FilterProducts extends Component {
+    state = {
+        products: null,
+        images: null,
+    }
 
-export default FilterProducts;
+    componentDidMount = () => {
+        axios.get(`http://api-maboutique/API/products/`)
+            .then(res => {
+                this.setState({ products: Object.values(res.data) });
+            })
+        axios.get(`http://api-maboutique/API/img`)
+            .then(res => {
+                this.setState({ images: Object.values(res.data) });
+            })
+    };
+
+    render() {
+        return (
+            <section>
+                <div className="containerFilterProducts">
+                    <div className="filter">
+                        <h4>Filtrer les produits :</h4>
+                        <hr />
+                        <div className='containerInput'>
+                            <label htmlFor="">Chercher une référence</label>
+                            <input type="text" className='form-control' placeholder='Désignation, modèle...' />
+                        </div>
+                        <div className='containerInput'>
+                            <label htmlFor="">Marque</label>
+                            <select name="pets" id="pet-select" className='form-control' placeholder='Désignation, modèle...'>
+                                <option value="">--Please choose an option--</option>
+                                <option value="dog">Dog</option>
+                                <option value="cat">Cat</option>
+                                <option value="hamster">Hamster</option>
+                                <option value="parrot">Parrot</option>
+                                <option value="spider">Spider</option>
+                                <option value="goldfish">Goldfish</option>
+                            </select>
+                        </div>
+                        <div className='containerInput'>
+                            <label htmlFor="">Prix (min, max)</label>
+                            <input type="range" className="form-range" min="0" max="5" step="0.5" id="customRange3" />
+                        </div>
+                    </div>
+                    <div className="products" >
+                        {/* MAP */}
+                        {
+                            this.state.products &&
+                            this.state.products.map(product => {
+                                return (
+                                    <div className="products-container" key={product.id_product}>
+                                        {
+                                            this.state.images &&
+                                            this.state.images.map(image => {
+                                                return (
+                                                    <div className="products-img" key={image.id_img}>
+                                                        <img src={image.url}  alt="" />
+                                                    </div>
+                                                )
+                                            })
+                                        }
+                                        <div className="products-details">
+                                            <div className="info">
+                                                <div>
+                                                    <div className="title">{product.designation}</div>
+                                                    <div className="min-desc">{product.min_description}</div>
+                                                </div>
+                                            </div>
+                                            <div className="swiper-item-details price">
+                                                <div className='container-stock'>
+                                                    <div className="stock-title">Dispo</div>
+                                                    <div className="stock-disponibilite">{product.stock_qty > 0 ? "En stock" : "Indisponible"}</div>
+                                                </div>
+                                                <div className='container-price'>
+                                                    <div className="swiper-item-price">{product.current_price}€</div>
+                                                    <ToolTips button={<BsBasket size="25" />} text={"Ajouter au panier"} classSelect={"swiper-item-basket"}></ToolTips>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                </div>
+            </section>
+        );
+    }
+};
