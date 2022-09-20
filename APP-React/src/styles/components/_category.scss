@@ -1,27 +1,41 @@
-.category-contain h3 {
-    font-size: 1.4rem;
-    padding: 0.5rem;
-    display: flex;
-    letter-spacing: 0.2rem;
-    font-family: $font-title;
-    text-transform: uppercase;
-    justify-content: center;
-    align-items: center;
+.category-contain {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem 0;
 }
-.category-contain h3:before {
-    content: '\203A';
-    font-size: 2rem;
-    padding: 0px 10px;
-    color: $color-primary;
-}
-.category-contain h3:after {
-    content: '\2039';
-    padding: 0px 10px;
-    font-size: 2rem;
-    color: $color-primary;
+.category-contain img {
+  width: 100px;
+  height: 100px;
 }
 
-.category-contain a:hover {
-    color: initial;
-    text-decoration: underline;
+.category-container h3 {
+  font-size: 1.4rem;
+  padding: 0.5rem;
+  display: flex;
+  letter-spacing: 0.2rem;
+  font-family: $font-title;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-container h3:before {
+  content: "\203A";
+  font-size: 2rem;
+  padding: 0px 10px;
+  color: $color-primary;
+}
+.category-container h3:after {
+  content: "\2039";
+  padding: 0px 10px;
+  font-size: 2rem;
+  color: $color-primary;
+}
+
+.category-container a:hover {
+  color: initial;
+  text-decoration: underline;
 }

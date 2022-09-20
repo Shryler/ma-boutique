@@ -4,13 +4,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import TypeWriter from './animations/TypeWriter';
 import Form from 'react-bootstrap/Form';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { FaRegUser } from 'react-icons/fa';
 import { BsBasket } from 'react-icons/bs';
 import ToolTips from './animations/ToolTips';
 
-
 function NavbarComponent() {
+
   return (
     <Navbar bg="dark" expand="lg" variant='dark' className="fixed-top navBar-container">
       <Container>
@@ -41,7 +41,7 @@ function NavbarComponent() {
             <Form.Control type="search" placeholder="Recherche" aria-label="Search" />
           </Form>
           <div className='d-flex ms-2 navbar-nav d-flex text-light'>
-            <NavLink to="/connection">
+            <NavLink to="/connexion">
               <ToolTips button={<FaRegUser size="25" />} text={"Se connecter / S'enregistrer"} classSelect={"me-2 navbar-btn"} offsetSelect={[0, 13]}></ToolTips>
             </NavLink>
             <ToolTips button={<BsBasket size="25" />} text={"Panier"} classSelect={"me-2 navbar-btn"} offsetSelect={[0, 13]}></ToolTips>

@@ -81,7 +81,7 @@ hr {
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-  --bs-blue: #0d6efd;
+  --bs-blue: #00d6bc;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
   --bs-pink: #d63384;
@@ -10607,7 +10607,21 @@ a:hover.swiper-items-img {
   max-width: 150px;
 }
 
-.category-contain h3, .category-contain .h3 {
+.category-contain {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem 0;
+}
+
+.category-contain img {
+  width: 100px;
+  height: 100px;
+}
+
+.category-container h3, .category-container .h3 {
   font-size: 1.4rem;
   padding: 0.5rem;
   display: flex;
@@ -10618,21 +10632,21 @@ a:hover.swiper-items-img {
   align-items: center;
 }
 
-.category-contain h3:before, .category-contain .h3:before {
+.category-container h3:before, .category-container .h3:before {
   content: "›";
   font-size: 2rem;
   padding: 0px 10px;
   color: #00d6bc;
 }
 
-.category-contain h3:after, .category-contain .h3:after {
+.category-container h3:after, .category-container .h3:after {
   content: "‹";
   padding: 0px 10px;
   font-size: 2rem;
   color: #00d6bc;
 }
 
-.category-contain a:hover {
+.category-container a:hover {
   color: initial;
   text-decoration: underline;
 }
