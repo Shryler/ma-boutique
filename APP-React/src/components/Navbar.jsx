@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import TypeWriter from './animations/TypeWriter';
 import Form from 'react-bootstrap/Form';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FaRegUser } from 'react-icons/fa';
 import { BsBasket } from 'react-icons/bs';
 import ToolTips from './animations/ToolTips';
