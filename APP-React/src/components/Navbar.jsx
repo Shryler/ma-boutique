@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 function NavbarComponent() {
 
   const [category, setCategory] = useState([]);
+<<<<<<< HEAD
 
   useEffect(() => {
     fetch("http://maboutique.api/category/" + 0, {
@@ -21,6 +22,12 @@ function NavbarComponent() {
     })
       .then(resp => resp.json())
       .then(json => setCategory(json));
+=======
+  useEffect(() => {
+      fetch("http://maboutique.api/category")
+          .then(resp => resp.json())
+          .then(json => setCategory(json));
+>>>>>>> 479cdf03e2e405e92c5af87b499cb06cfc039c70
   }, [])
 
   return (
@@ -37,6 +44,7 @@ function NavbarComponent() {
           <Nav className="m-auto my-2 my-lg-0 text-wrap" navbarScroll>
             <NavDropdown title="Périphériques" id="navbarScrollingDropdown">
               {category.filter(cat => cat.Id_category <= 4).map(cat => {
+<<<<<<< HEAD
                 return (
                   <NavLink key={cat.Id_category} to={`/categorie/${cat.Id_category}`} className="dropdown-item">{cat.category}</NavLink>
                 );
@@ -53,6 +61,24 @@ function NavbarComponent() {
                   <NavLink key={cat.Id_category} to={`/categorie/${cat.Id_category}`} className="dropdown-item">{cat.category}</NavLink>
                 );
               })}
+=======
+                    return (
+                            <NavLink to={`/category/${cat.category}`} className="dropdown-item">{cat.category}</NavLink>
+                    );
+                })}
+            </NavDropdown>
+            {category.filter(cat => cat.Id_category >= 5 && cat.Id_category <= 6).map(cat => {
+                    return (
+                            <NavLink to={`/category/${cat.category}`} className="nav-link">{cat.category}</NavLink>
+                    );
+                })}
+            <NavDropdown title="Tablettes" id="navbarScrollingDropdown">
+            {category.filter(cat => cat.Id_category >= 7 && cat.Id_category <= 8).map(cat => {
+                    return (
+                            <NavLink to={`/category/${cat.category}`} className="dropdown-item">{cat.category}</NavLink>
+                    );
+                })}
+>>>>>>> 479cdf03e2e405e92c5af87b499cb06cfc039c70
               {/* <NavDropdown.Divider /> */}
             </NavDropdown>
           </Nav>
