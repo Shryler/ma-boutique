@@ -10388,6 +10388,7 @@ a.dropdown-item {
 }
 
 .pad400 {
+  padding: 1rem;
   padding-top: 400px;
 }
 
@@ -11073,6 +11074,14 @@ section.LoginAndRegistration .container.active .signinBx .imgBx {
 .section {
   text-align: center;
   padding: 1rem;
+}
+
+.section:first-of-type {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.section:last-of-type {
+  border-radius: 0 0 1rem 1rem;
 }
 
 .section h2, .section .h2 {

@@ -8,8 +8,20 @@ import { NavLink } from 'react-router-dom';
 import { FaRegUser } from 'react-icons/fa';
 import { BsBasket } from 'react-icons/bs';
 import ToolTips from './animations/ToolTips';
+import { useEffect, useState } from 'react';
 
 function NavbarComponent() {
+
+  const [category, setCategory] = useState([]);
+
+  useEffect(() => {
+    fetch("http://maboutique.api/category/" + 0, {
+      method: "POST",
+      body: JSON.stringify({ with: ['category'] })
+    })
+      .then(resp => resp.json())
+      .then(json => setCategory(json));
+  }, [])
 
   return (
     <Navbar bg="dark" expand="lg" variant='dark' className="fixed-top navBar-container">
@@ -24,16 +36,23 @@ function NavbarComponent() {
         <Navbar.Collapse id="navbarScroll">
           <Nav className="m-auto my-2 my-lg-0 text-wrap" navbarScroll>
             <NavDropdown title="Périphériques" id="navbarScrollingDropdown">
-              <NavLink to="/ecran-PC" className="dropdown-item">Ecran PC</NavLink>
-              <NavLink to="/clavier-souris-tapis" className="dropdown-item">Clavier/Souris/Tapis</NavLink>
-              <NavLink to="/casque-micro" className="dropdown-item">Casque & micro</NavLink>
-              <NavLink to="/webcam" className="dropdown-item">Webcam</NavLink>
+              {category.filter(cat => cat.Id_category <= 4).map(cat => {
+                return (
+                  <NavLink key={cat.Id_category} to={`/categorie/${cat.Id_category}`} className="dropdown-item">{cat.category}</NavLink>
+                );
+              })}
             </NavDropdown>
-            <NavLink to="/ordinateurs-portables" className="nav-link">Ordinateurs Portables</NavLink>
-            <NavLink to="/ordinateurs-fixe" className="nav-link">Ordinateurs PC Fixe</NavLink>
+            {category.filter(cat => cat.Id_category >= 5 && cat.Id_category <= 6).map(cat => {
+              return (
+                <NavLink key={cat.Id_category} to={`/categorie/${cat.Id_category}`} className="nav-link">{cat.category}</NavLink>
+              );
+            })}
             <NavDropdown title="Tablettes" id="navbarScrollingDropdown">
-              <NavLink to="/tablette" className="dropdown-item">Tablette</NavLink>
-              <NavLink to="/ipad" className="dropdown-item">Ipad</NavLink>
+              {category.filter(cat => cat.Id_category >= 7 && cat.Id_category <= 8).map(cat => {
+                return (
+                  <NavLink key={cat.Id_category} to={`/categorie/${cat.Id_category}`} className="dropdown-item">{cat.category}</NavLink>
+                );
+              })}
               {/* <NavDropdown.Divider /> */}
             </NavDropdown>
           </Nav>

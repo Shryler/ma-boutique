@@ -1,19 +1,6 @@
 // Bootstrap
 @import "./settings";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
-// @import "../node_modules/bootstrap/scss/functions";
-// @import "../node_modules/bootstrap/scss/variables";
-// @import "../node_modules/bootstrap/scss/maps";
-// @import "../node_modules/bootstrap/scss/mixins";
-// @import "../node_modules/bootstrap/scss/root";
-// @import "../node_modules/bootstrap/scss/utilities";
-// @import "../node_modules/bootstrap/scss/reboot";
-// @import "../node_modules/bootstrap/scss/type";
-// @import "../node_modules/bootstrap/scss/images";
-// @import "../node_modules/bootstrap/scss/containers";
-// @import "../node_modules/bootstrap/scss/grid";
-// @import "../node_modules/bootstrap/scss/helpers";
-// @import "../node_modules/bootstrap/scss/utilities/api";
 // Settings
 // Components
 @import "./components/navbar";
@@ -27,9 +14,9 @@
 @import "./components/returnTop";
 @import "./components/loginandregistration";
 // Pages
-@import "./pages/home";
-@import "./pages/pageNotFound";
-@import "./pages/produits";
+@import "./screens/home";
+@import "./screens/pageNotFound";
+@import "./screens/produits";
 // FontAwesome
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css";
 @import 'https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap';
