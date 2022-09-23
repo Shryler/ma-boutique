@@ -9,7 +9,7 @@ function CategoryDetailScreen() {
     useEffect(() => {
         fetch("http://maboutique.api/category/" + id, {
             method: "POST",
-            body: JSON.stringify({ with: [ "category" ] })
+            body: JSON.stringify({ with: [{ product: "category_product" }] })
         })
             .then(resp => resp.json())
             .then(json => {
