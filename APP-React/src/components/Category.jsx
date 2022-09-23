@@ -21,19 +21,10 @@ function Category() {
             <div className="category-contain">
                 {category.filter(cat => cat.Id_category <= 4).map(cat => {
                     return (
-<<<<<<< HEAD
                         <NavLink key={cat.Id_category} to={`/categorie/${cat.Id_category}`} className="category_flex">
                             <img src={cat.img} alt={cat.category} />
                             <p>{cat.category}</p>
                         </NavLink>
-=======
-                        <div key={cat.Id_category} className="d-flex gap-5 justify-content-center flex-wrap">
-                            <NavLink to={`/category/${cat.category}`}>
-                                <img src={cat.img} alt={cat.category} />
-                                <p>{cat.category}</p>
-                            </NavLink>
-                        </div>
->>>>>>> 479cdf03e2e405e92c5af87b499cb06cfc039c70
                     );
                 })}
             </div>
@@ -42,19 +33,10 @@ function Category() {
             <div className="category-contain">
                 {category.filter(cat => cat.Id_category >= 5 && cat.Id_category <= 6).map(cat => {
                     return (
-<<<<<<< HEAD
                         <NavLink key={cat.Id_category} to={`/categorie/${cat.Id_category}`} className="category_flex">
                             <img src={cat.img} alt={cat.category} />
                             <p>{cat.category}</p>
                         </NavLink>
-=======
-                        <div key={cat.Id_category} className="d-flex gap-5 justify-content-center flex-wrap">
-                            <NavLink to={`/category/${cat.category}`}>
-                                <img src={cat.img} alt={cat.category} />
-                                <p>{cat.category}</p>
-                            </NavLink>
-                        </div>
->>>>>>> 479cdf03e2e405e92c5af87b499cb06cfc039c70
                     );
                 })}
             </div>
@@ -63,19 +45,10 @@ function Category() {
             <div className="category-contain">
                 {category.filter(cat => cat.Id_category >= 7 && cat.Id_category <= 8).map(cat => {
                     return (
-<<<<<<< HEAD
                         <NavLink key={cat.Id_category} to={`/categorie/${cat.Id_category}`} className="category_flex">
                             <img src={cat.img} alt={cat.category} />
                             <p>{cat.category}</p>
                         </NavLink>
-=======
-                        <div key={cat.Id_category} className="d-flex gap-5 justify-content-center flex-wrap">
-                            <NavLink to={`/category/${cat.category}`}>
-                                <img src={cat.img} alt={cat.category} />
-                                <p>{cat.category}</p>
-                            </NavLink>
-                        </div>
->>>>>>> 479cdf03e2e405e92c5af87b499cb06cfc039c70
                     );
                 })}
             </div>
