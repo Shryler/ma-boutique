@@ -9,11 +9,11 @@ function CategoryDetailScreen() {
     useEffect(() => {
         fetch("http://maboutique.api/category/" + id, {
             method: "POST",
-            body: JSON.stringify({ with: ['product'] })
+            body: JSON.stringify({ with: [ "category" ] })
         })
             .then(resp => resp.json())
             .then(json => {
-                // console.log(json);
+                console.log(json);
                 setCategory(json);
             });
     }, [id])
@@ -21,6 +21,18 @@ function CategoryDetailScreen() {
     return (<>
         <div>
             <h1>Catégorie : {category?.category}</h1>
+            {
+                category?.products_list.map(product => {
+                    return (
+                        <div key={product.Id_product}>
+                            <p>{product.designation}</p>
+                            <p>{product.min_description}</p>
+                            <p>{product?.brand?.name_brand}</p>
+                            <hr />
+                        </div>
+                    );
+                })
+            }
         </div>
     </>);
 }
