@@ -13,10 +13,12 @@
 @import "./components/typewriter";
 @import "./components/returnTop";
 @import "./components/loginandregistration";
+@import "./components/categoryDetail";
+@import "./components/productDetail";
+@import "./components/breadcrumb";
 // Pages
 @import "./screens/home";
 @import "./screens/pageNotFound";
-@import "./screens/produits";
 // FontAwesome
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css";
 @import 'https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap';

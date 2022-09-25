@@ -1,0 +1,13 @@
+ol.breadcrumb {
+    color: $color-white;
+    background-color: $color-black;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    border-radius: 2rem;
+}
+ol.breadcrumb a {
+    color: $color-white;
+}
+ol.breadcrumb a:hover {
+    color: $color-primary;
+}

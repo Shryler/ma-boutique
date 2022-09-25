@@ -4,7 +4,7 @@
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  justify-items: center;
+  min-height: 50vh;
   grid-template-areas: "filter products";
 
   .filter {
@@ -37,10 +37,11 @@
 .products-container {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
 }
 .products-img {
-  width: 100%;
-  max-height: 150px;
+  max-width: 150px;
   flex: 1;
   display: flex;
   align-items: center;
@@ -130,6 +131,12 @@
   }
 }
 
+// LIENS NAVLINK
+
+a.link_categorydetail div.products-container:hover{
+  color:initial;
+}
+
 @media screen and (max-width: 992px) {
   .containerFilterProducts {
     grid-template-areas: "products products";
@@ -138,3 +145,12 @@
     display: none;
   }
 }
+@media screen and (max-width: 768px) {
+  .products-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+

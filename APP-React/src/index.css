@@ -4242,7 +4242,7 @@ textarea.form-control-lg {
   --bs-breadcrumb-margin-bottom: 1rem;
   --bs-breadcrumb-bg: ;
   --bs-breadcrumb-border-radius: ;
-  --bs-breadcrumb-divider-color: #6c757d;
+  --bs-breadcrumb-divider-color: #00d6bc;
   --bs-breadcrumb-item-padding-x: 0.5rem;
   --bs-breadcrumb-item-active-color: #6c757d;
   display: flex;
@@ -4262,7 +4262,7 @@ textarea.form-control-lg {
   float: left;
   padding-right: var(--bs-breadcrumb-item-padding-x);
   color: var(--bs-breadcrumb-divider-color);
-  content: var(--bs-breadcrumb-divider, "/") /* rtl: var(--bs-breadcrumb-divider, "/") */;
+  content: var(--bs-breadcrumb-divider, "⤍") /* rtl: var(--bs-breadcrumb-divider, "⤍") */;
 }
 .breadcrumb-item.active {
   color: var(--bs-breadcrumb-item-active-color);
@@ -11071,35 +11071,13 @@ section.LoginAndRegistration .container.active .signinBx .imgBx {
   }
 }
 
-.section {
-  text-align: center;
-  padding: 1rem;
-}
-
-.section:first-of-type {
-  border-radius: 1rem 1rem 0 0;
-}
-
-.section:last-of-type {
-  border-radius: 0 0 1rem 1rem;
-}
-
-.section h2, .section .h2 {
-  color: #212529;
-  font-family: "font-Michroma", sans-serif;
-  letter-spacing: 0.3rem;
-  margin: 1rem;
-  font-weight: 600;
-  text-shadow: 2px 2px 5px rgb(150, 150, 150);
-}
-
 .containerFilterProducts {
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  justify-items: center;
+  min-height: 50vh;
   grid-template-areas: "filter products";
 }
 .containerFilterProducts .filter {
@@ -11128,11 +11106,12 @@ section.LoginAndRegistration .container.active .signinBx .imgBx {
 .products-container {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
 }
 
 .products-img {
-  width: 100%;
-  max-height: 150px;
+  max-width: 150px;
   flex: 1;
   display: flex;
   align-items: center;
@@ -11222,6 +11201,10 @@ section.LoginAndRegistration .container.active .signinBx .imgBx {
   justify-content: space-between;
 }
 
+a.link_categorydetail div.products-container:hover {
+  color: initial;
+}
+
 @media screen and (max-width: 992px) {
   .containerFilterProducts {
     grid-template-areas: "products products";
@@ -11229,6 +11212,92 @@ section.LoginAndRegistration .container.active .signinBx .imgBx {
   .filter {
     display: none;
   }
+}
+@media screen and (max-width: 768px) {
+  .products-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.productDetail {
+  margin: 1rem;
+}
+.productDetail .title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #212529;
+  margin: 0;
+}
+.productDetail .minDesc {
+  color: #282b2b;
+}
+.productDetail .detailProduct {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.productDetail .detailProduct p {
+  padding: 1rem;
+  text-align: justify;
+}
+.productDetail .img-container {
+  display: flex;
+  flex: 1;
+  max-width: 250px;
+  height: 250px;
+}
+.productDetail .desc-container {
+  flex: 1;
+  min-width: 250px;
+}
+
+ol.breadcrumb {
+  color: rgba(255, 255, 255, 0.7);
+  background-color: #212529;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  border-radius: 2rem;
+}
+
+ol.breadcrumb a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+ol.breadcrumb a:hover {
+  color: #00d6bc;
+}
+
+.section {
+  text-align: center;
+  padding: 1rem;
+}
+
+.section:first-of-type {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.section:last-of-type {
+  border-radius: 0 0 1rem 1rem;
+}
+
+.section h2, .section .h2 {
+  color: #212529;
+  font-family: "font-Michroma", sans-serif;
+  letter-spacing: 0.3rem;
+  margin: 1rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 5px rgb(150, 150, 150);
+}
+
+.category_flex {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 /*# sourceMappingURL=index.css.map */

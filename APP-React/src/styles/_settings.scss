@@ -26,6 +26,9 @@ $color-black: #212529;
 
 $primary: #00d6bc;
 
+$breadcrumb-divider: quote("\290D");
+$breadcrumb-divider-color: $color-primary;
+
 $theme-colors: (
   "primary": #00d6bc,
 );
@@ -91,3 +94,4 @@ hr {
 .text-wrap {
   white-space: nowrap !important;
 }
+

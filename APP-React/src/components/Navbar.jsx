@@ -39,8 +39,8 @@ function NavbarComponent() {
             <NavDropdown title="Périphériques" id="navbarScrollingDropdown">
               {category.filter(cat => cat.Id_category <= 4).map(cat => {
                 return (
-                  <NavDropdown.Item key={cat.Id_category}>
-                    <NavLink to={`/categorie/${cat.Id_category}`} className="dropdown-item">{cat.category}</NavLink>
+                  <NavDropdown.Item key={cat.Id_category} to={`/categorie/${cat.Id_category}`} className="NavLink dropdown-item" as={NavLink}>
+                    {cat.category}
                   </NavDropdown.Item>
                 );
               })}
@@ -53,8 +53,8 @@ function NavbarComponent() {
             <NavDropdown title="Tablettes" id="navbarScrollingDropdown">
               {category.filter(cat => cat.Id_category >= 7 && cat.Id_category <= 8).map(cat => {
                 return (
-                  <NavDropdown.Item key={cat.Id_category}>
-                    <NavLink to={`/categorie/${cat.Id_category}`} className="dropdown-item">{cat.category}</NavLink>
+                  <NavDropdown.Item key={cat.Id_category} to={`/categorie/${cat.Id_category}`} className="dropdown-item" as={NavLink}>
+                    {cat.category}
                   </NavDropdown.Item>
                 );
               })}
