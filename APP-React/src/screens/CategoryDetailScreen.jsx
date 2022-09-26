@@ -8,6 +8,7 @@ function CategoryDetailScreen() {
 
     const { id } = useParams();
     const [category, setCategory] = useState(null);
+    const [isHereBrands, setIsHereBrands] = useState([]);
 
     useEffect(() => {
         fetch("http://maboutique.api/category/" + id, {
@@ -18,13 +19,18 @@ function CategoryDetailScreen() {
             .then(json => {
                 json.filter_product = json.products_list
                 setCategory(json);
+                const brandArray = [];
+                for (const brand of json.products_list) {
+                    brandArray.push(brand.Id_brand);
+                }
+                setIsHereBrands(brandArray);
             });
     }, [id])
 
     return (<>
         <section>
             <div className="containerFilterProducts">
-                <FilterProducts setCategory={setCategory} id={id}/>
+                <FilterProducts setCategory={setCategory} isHereBrands={isHereBrands} id={id} />
                 <div className="products" >
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
@@ -33,36 +39,36 @@ function CategoryDetailScreen() {
                         </ol>
                     </nav>
                     {
-                        category?.filter_product.length === 0 ? <div>Aucun article disponible</div> : 
-                        category?.filter_product?.map(product => {
-                            return (
-                                <NavLink to={`/categorie/${category.Id_category}/detail/${product.Id_product}`} className="link_categorydetail" key={product.Id_product}>
-                                    <div className="products-container container" >
-                                        <div className="products-img">
-                                            <img src={product.image} alt="" />
-                                        </div>
-                                        <div className="products-details">
-                                            <div className="info">
-                                                <div>
-                                                    <div className="title">{product.designation}</div>
-                                                    <div className="min-desc">{product.min_description}</div>
+                        category?.filter_product.length === 0 ? <div>Aucun article disponible</div> :
+                            category?.filter_product?.map(product => {
+                                return (
+                                    <NavLink to={`/categorie/${category.Id_category}/detail/${product.Id_product}`} className="link_categorydetail" key={product.Id_product}>
+                                        <div className="products-container container" >
+                                            <div className="products-img">
+                                                <img src={product.image} alt="" />
+                                            </div>
+                                            <div className="products-details">
+                                                <div className="info">
+                                                    <div>
+                                                        <div className="title">{product.designation}</div>
+                                                        <div className="min-desc">{product.min_description}</div>
+                                                    </div>
+                                                </div>
+                                                <div className="swiper-item-details price">
+                                                    <div className='container-stock'>
+                                                        <div className="stock-title">Dispo</div>
+                                                        <div className={product.stock_qty > 0 ? "stock-dispo" : "stock-indispo"}></div>
+                                                    </div>
+                                                    <div className='container-price'>
+                                                        <div className="swiper-item-price">{product.current_price}€</div>
+                                                        <ToolTips button={<BsBasket size="25" />} text={"Ajouter au panier"} classSelect={"swiper-item-basket"}></ToolTips>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className="swiper-item-details price">
-                                                <div className='container-stock'>
-                                                    <div className="stock-title">Dispo</div>
-                                                    <div className={product.stock_qty > 0 ? "stock-dispo" : "stock-indispo"}></div>
-                                                </div>
-                                                <div className='container-price'>
-                                                    <div className="swiper-item-price">{product.current_price}€</div>
-                                                    <ToolTips button={<BsBasket size="25" />} text={"Ajouter au panier"} classSelect={"swiper-item-basket"}></ToolTips>
-                                                </div>
-                                            </div>
                                         </div>
-                                    </div>
-                                </NavLink>
-                            );
-                        })
+                                    </NavLink>
+                                );
+                            })
                     }
                 </div>
             </div>
