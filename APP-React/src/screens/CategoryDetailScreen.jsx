@@ -9,6 +9,7 @@ function CategoryDetailScreen() {
     const { id } = useParams();
     const [category, setCategory] = useState(null);
     const [isHereBrands, setIsHereBrands] = useState([]);
+    const [isHerePrice, setIsHerePrice] = useState([]);
 
     useEffect(() => {
         fetch("http://maboutique.api/category/" + id, {
@@ -20,17 +21,20 @@ function CategoryDetailScreen() {
                 json.filter_product = json.products_list
                 setCategory(json);
                 const brandArray = [];
-                for (const brand of json.products_list) {
-                    brandArray.push(brand.Id_brand);
+                const priceArray = [];
+                for (const product of json.products_list) {
+                    priceArray.push(product.current_price);
+                    brandArray.push(product.Id_brand);
                 }
                 setIsHereBrands(brandArray);
+                setIsHerePrice(priceArray);
             });
-    }, [id])
+        }, [id])
 
     return (<>
         <section>
             <div className="containerFilterProducts">
-                <FilterProducts setCategory={setCategory} isHereBrands={isHereBrands} id={id} />
+                <FilterProducts setCategory={setCategory} isHereBrands={isHereBrands} isHerePrice={isHerePrice} id={id} />
                 <div className="products" >
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
