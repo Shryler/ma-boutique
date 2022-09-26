@@ -16,7 +16,7 @@ function CategoryDetailScreen() {
         })
             .then(resp => resp.json())
             .then(json => {
-                // console.log(json);
+                json.filter_product = json.products_list
                 setCategory(json);
             });
     }, [id])
@@ -24,7 +24,7 @@ function CategoryDetailScreen() {
     return (<>
         <section>
             <div className="containerFilterProducts">
-                <FilterProducts />
+                <FilterProducts setCategory={setCategory} />
                 <div className="products" >
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
@@ -33,7 +33,8 @@ function CategoryDetailScreen() {
                         </ol>
                     </nav>
                     {
-                        category?.products_list.map(product => {
+                        category?.filter_product.length === 0 ? <div>Aucun article disponible</div> : 
+                        category?.filter_product?.map(product => {
                             return (
                                 <NavLink to={`/categorie/${category.Id_category}/detail/${product.Id_product}`} className="link_categorydetail" key={product.Id_product}>
                                     <div className="products-container container" >

@@ -19,7 +19,7 @@ function ProductDetailScreen() {
                 console.log(json);
                 setProducts(json);
             });
-    }, [id])
+    }, [id]);
 
     return (
         <section className='container pt-3'>
