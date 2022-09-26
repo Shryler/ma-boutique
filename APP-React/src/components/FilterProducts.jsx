@@ -18,14 +18,14 @@ function FilterProducts({ setCategory, isHereBrands, id, isHerePrice }) {
                 });
                 setBrands(json);
             });
-    }, [])
-
-    useEffect(() => {
+        }, [])
+        
+        useEffect(() => {
         inputRef.current.value = "";
         selectRef.current.selectedIndex = 0;
         setRangeValue(Math.max(...isHerePrice));
-    }, [id, filter, isHerePrice])
-
+    }, [id, isHerePrice])
+    
     useEffect(() => {
         setCategory((prevValue) => {
             if (!prevValue) {
@@ -33,11 +33,12 @@ function FilterProducts({ setCategory, isHereBrands, id, isHerePrice }) {
             }
             prevValue.filter_product = prevValue?.products_list.filter((a) => {
                 return a?.designation?.toLowerCase().includes(filter.refSelect.toLowerCase()) &&
-                    (filter.brandSelect.id === '0' ? true : filter.brandSelect.id === a.Id_brand);
+                (filter.brandSelect.id === '0' ? true : filter.brandSelect.id === a.Id_brand);
             })
             return { ...prevValue };
         })
     }, [filter, setCategory])
+
 
     return (
         <div className="filter">
@@ -45,21 +46,11 @@ function FilterProducts({ setCategory, isHereBrands, id, isHerePrice }) {
             <hr />
             <div className='containerInput'>
                 <label htmlFor="">Chercher une référence</label>
-                <input
-                    type="text"
-                    className='form-control'
-                    ref={inputRef}
-                    placeholder='Désignation, modèle...'
-                    onChange={(e) => setFilter((pv) => ({ ...pv, refSelect: e.target.value }))} />
+                <input type="text" className='form-control' ref={inputRef} placeholder='Désignation, modèle...' onChange={(e) => setFilter((pv) => ({ ...pv, refSelect: e.target.value }))} />
             </div>
             <div className='containerInput'>
                 <label htmlFor="">Marque</label>
-                <select
-                    name="brand"
-                    id="brand-select"
-                    className='form-control'
-                    ref={selectRef}
-                    onChange={(e) => setFilter((pv) => ({ ...pv, brandSelect: e.target.options[e.target.selectedIndex] }))}>
+                <select name="brand" id="brand-select" className='form-control' ref={selectRef} onChange={(e) => setFilter((pv) => ({ ...pv, brandSelect: e.target.options[e.target.selectedIndex] }))}>
                     <option id={0} value="">-- Sélectionner une marque --</option>
                     {
                         brands?.filter((e) => isHereBrands.includes(e.Id_brand)).map(brand => {
@@ -73,15 +64,7 @@ function FilterProducts({ setCategory, isHereBrands, id, isHerePrice }) {
             <div className='containerInput'>
                 <label htmlFor="">Prix (min, max)</label>
                 <fieldset>
-                    <input
-                        type="range"
-                        className="form-range"
-                        step="1"
-                        name="rangeCurrentPrice"
-                        min={Math.min(...isHerePrice)}
-                        max={Math.max(...isHerePrice)}
-                        value={rangeValue}
-                        onChange={(e) => setRangeValue(e.target.value)} />
+                    <input type="range" className="form-range" step="1" name="rangeCurrentPrice" min={Math.min(...isHerePrice)} max={Math.max(...isHerePrice)} value={rangeValue} onChange={(e) => setRangeValue(e.target.value)}/>
                 </fieldset>
                 <div className='d-flex justify-content-between align-items-center'>
                     <span>{Math.min(...isHerePrice)} €</span>

@@ -16,7 +16,7 @@ function ProductDetailScreen() {
         })
             .then(resp => resp.json())
             .then(json => {
-                console.log(json);
+                // console.log(json);
                 setProducts(json);
             });
     }, [id]);
