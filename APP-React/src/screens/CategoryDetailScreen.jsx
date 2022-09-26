@@ -24,7 +24,7 @@ function CategoryDetailScreen() {
     return (<>
         <section>
             <div className="containerFilterProducts">
-                <FilterProducts setCategory={setCategory} />
+                <FilterProducts setCategory={setCategory} id={id}/>
                 <div className="products" >
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">

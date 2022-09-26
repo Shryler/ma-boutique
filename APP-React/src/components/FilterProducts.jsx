@@ -1,19 +1,25 @@
 import React, { useEffect, useState } from 'react';
+import { useRef } from 'react';
 
-function FilterProducts({ setCategory }) {
+function FilterProducts({ setCategory, id }) {
 
     const [brands, setBrands] = useState(null);
+    const inputRef = useRef();
 
     useEffect(() => {
         fetch("http://maboutique.api/brand/")
-            .then(resp => resp.json())
-            .then(json => {
-                json = json.sort((a, b) => {
+        .then(resp => resp.json())
+        .then(json => {
+            json = json.sort((a, b) => {
                     return a.name_brand.toLowerCase() > b.name_brand.toLowerCase() ? 1 : -1;
                 });
                 setBrands(json);
             });
     }, [])
+
+    useEffect(() => {
+        inputRef.current.value = "";
+    }, [id])
 
     const handleChange = (e) => {
         setCategory((prevValue) => {
@@ -24,7 +30,6 @@ function FilterProducts({ setCategory }) {
         })
     }
 
-    cancelCourse = () => { document.getElementsByClass("form-control").reset(); }
 
     return (
         <div className="filter">
@@ -32,11 +37,11 @@ function FilterProducts({ setCategory }) {
             <hr />
             <div className='containerInput'>
                 <label htmlFor="">Chercher une référence</label>
-                <input type="text" className='form-control' placeholder='Désignation, modèle...' onChange={(e) => handleChange(e.target.value)} />
+                <input type="text" className='form-control' ref={inputRef} placeholder='Désignation, modèle...' onChange={(e) => handleChange(e.target.value)} />
             </div>
             <div className='containerInput'>
                 <label htmlFor="">Marque</label>
-                <select name="pets" id="pet-select" className='form-control' placeholder='Désignation, modèle...'>
+                <select name="pets" id="pet-select" className='form-control' ref={inputRef} placeholder='Désignation, modèle...' onChange={(e) => handleChange(e.target.value)}>
                     <option value="">-- Sélectionner une marque --</option>
                     {
                         brands?.map(brand => {
